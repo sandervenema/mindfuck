@@ -31,8 +31,7 @@ void interpret(std::vector<Token> tokens)
 				// jump to after matching ]. This will be the FIRST ] we
 				// find in the token input stream starting here.
 				std::vector<Token>::iterator nth = tokens.begin() + j;
-				auto it = std::find(nth, tokens.end(),
-						    Token::JNZ);
+				auto it = std::find(nth, tokens.end(), Token::JNZ);
 				j = it - tokens.begin();
 				continue;
 			}
@@ -41,8 +40,7 @@ void interpret(std::vector<Token> tokens)
 				// jump to after matching [. This will be the FIRST [ we
 				// find in the input token stream before this index.
 				std::vector<Token>::iterator nth = tokens.begin() + j;
-				auto it = std::find(tokens.begin(), nth,
-						    Token::JEZ);
+				auto it = std::find(tokens.begin(), nth, Token::JEZ);
 				j = it - tokens.begin();
 				continue;
 			}
